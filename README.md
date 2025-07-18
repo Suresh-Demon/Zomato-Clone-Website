@@ -1,61 +1,57 @@
+
 # 🍔🍽️ Zomato Clone Website
 
-This is a Zomato Clone website project created using HTML, CSS, and JavaScript. It mimics the basic front-end design and functionality of Zomato, including homepage layout, restaurant listings, search functionality, and a responsive UI.
+This is a **Zomato Clone Website** project created using **HTML**, **CSS**, and **JavaScript**.  
+It replicates the basic front-end design and functionality of Zomato — including the homepage layout, restaurant listings, search functionality, and a fully responsive user interface.
 
 ---
 
 ## 📸 Screenshots
 
-![Home Page - Light Mode](img/1.png)
+> Sample previews from the project UI:
 
-![Home Page - Light Mode](img/2.png)
-
-![Home Page - Light Mode](img/3.png)
-
-![Home Page - Light Mode](img/4.png)
-
-![Home Page - Light Mode](img/5.png)
-
-![Home Page - Light Mode](img/6.png)
-
-![Home Page - Light Mode](img/7.png)
-
-![Home Page - Light Mode](img/8.png)
-
-![Home Page - Light Mode](img/9.png)
-
-![Home Page - Light Mode](img/10.png)
-
-![Home Page - Light Mode](img/11.png)
-
-![Home Page - Light Mode](img/12.png)
-
-![Home Page - Light Mode](img/13.png)
-
-![Home Page - Light Mode](img/14.png)
-
-![Home Page - Light Mode](img/15.png)
-
+![Home Page](img/1.png)  
+![Restaurant Listings](img/2.png)  
+![Search Functionality](img/3.png)  
+![Categories](img/4.png)  
+![Responsive Design](img/5.png)  
+![Mobile View](img/6.png)  
+![Restaurant Cards](img/7.png)  
+![Filters & Menus](img/8.png)  
+![More Sections](img/9.png)  
+![User Interface](img/10.png)  
+![Dark Mode (optional)](img/11.png)  
+![Footer Section](img/12.png)  
+![Location Select](img/13.png)  
+![Dining Out](img/14.png)  
+![Final Layout](img/15.png)
 
 ---
 
 ## 🚀 Features
 
-- 🔍 Search restaurants and food items
-- 📍 Location selector
-- 🖼️ High-quality UI inspired by Zomato
-- 🔥 Fully responsive design for mobile and desktop
-- 🌙 Light/Dark Mode toggle (if included)
-- 🍽️ Categories like Delivery, Dining Out, Nightlife, etc.
+- 🔍 Restaurant and food item search functionality  
+- 📍 Location selection dropdown  
+- 🖼️ High-quality front-end UI inspired by Zomato  
+- 📱 Responsive design for mobile and desktop  
+- 🌙 Optional Light/Dark Mode toggle  
+- 🍽️ Sections like Delivery, Dining Out, Nightlife, and more  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- HTML5
-- CSS3 
-- JavaScript
+- ✅ HTML5  
+- 🎨 CSS3  
+- ⚙️ JavaScript  
 
 ---
 
 
+## 👨‍💻 Author
+
+- **Suresh Jaiswar**
+- [GitHub Profile](https://github.com/Suresh-Demon)
+- [LinkedIn](https://www.linkedin.com/in/suresh-jaiswar-3338a027a/)
+
+---
