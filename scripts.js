@@ -1,77 +1,140 @@
 function toggleSection(element) {
-  const content = element.nextElementSibling;
-  const icon = element.querySelector("i");
-  if (content.style.display === "block") {
-    content.style.display = "none";
-    icon.classList.remove("open");
-  } else {
-    content.style.display = "block";
-    icon.classList.add("open");
-  }
+    const content = element.nextElementSibling;
+    const icon = element.querySelector("i");
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        icon.classList.remove("open");
+    } else {
+        content.style.display = "block";
+        icon.classList.add("open");
+    }
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const users = {};
+    let currentUser = null;
 
-document.addEventListener('DOMContentLoaded', function () {
-  const termsCheckbox = document.getElementById('termsCheckbox');
-  const createAccountBtn = document.getElementById('createAccountBtn');
-  const signupForm = document.getElementById('signupForm');
 
-  // Enable submit button only when terms checkbox is checked
-  termsCheckbox.addEventListener('change', function () {
-    createAccountBtn.disabled = !termsCheckbox.checked;
-  });
+    const signupForm = document.querySelector("#exampleModalSign #signupForm");
+    const signupNameInput = signupForm.querySelector("#fullName");
+    const signupEmailInput = signupForm.querySelector("#email");
+    const signupPasswordInput = signupForm.querySelector("#password");
+    const termsCheckbox = signupForm.querySelector("#termsCheckbox");
 
-  // Handle form submission
-  signupForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form from submitting in the traditional way
 
-    // Capture form data
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const loginForm = document.querySelector("#exampleModalLogin #signupForm");
+    const loginNameInput = loginForm.querySelector("#fullName");
+    const loginPasswordInput = loginForm.querySelector("#password");
 
-    // Example: Log form data to console (Replace with your own logic for handling sign-up)
-    console.log('Full Name:', fullName);
-    console.log('Email:', email);
-    console.log('Password:', password);
 
-    // Clear form fields after submission
-    signupForm.reset();
-    createAccountBtn.disabled = true; // Disable the button again
-  });
+    const authButton = document.getElementById("authButton");
+
+
+    authButton.addEventListener("click", function () {
+        if (currentUser) {
+            handleLogout();
+        } else {
+            showLoginModal();
+        }
+    });
+
+
+    function validateSignupForm() {
+        const isNameFilled = signupNameInput.value.trim() !== "";
+        const isEmailFilled = signupEmailInput.value.trim() !== "";
+        const isPasswordFilled = signupPasswordInput.value.trim() !== "";
+        const isTermsChecked = termsCheckbox.checked;
+
+        return isNameFilled && isEmailFilled && isPasswordFilled && isTermsChecked;
+    }
+
+    signupForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!validateSignupForm()) {
+            alert("Please fill all fields and accept the terms.");
+            return;
+        }
+
+        const fullName = signupNameInput.value.trim();
+        const email = signupEmailInput.value.trim();
+        const password = signupPasswordInput.value.trim();
+
+        if (users[email]) {
+            alert("This email is already registered.");
+        } else {
+            users[email] = { fullName, password };
+            alert("Account created successfully!");
+
+            const signupModal = bootstrap.Modal.getInstance(document.getElementById("exampleModalSign"));
+            signupModal.hide();
+
+            loginNameInput.value = fullName;
+            loginPasswordInput.value = password;
+        }
+    });
+
+
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const fullName = loginNameInput.value.trim();
+        const password = loginPasswordInput.value.trim();
+
+        const user = Object.values(users).find((user) => user.fullName === fullName && user.password === password);
+
+        if (user) {
+            alert(`Welcome back, ${fullName}!`);
+            currentUser = user;
+            updateAuthButton();
+
+            const loginModal = bootstrap.Modal.getInstance(document.getElementById("exampleModalLogin"));
+            loginModal.hide();
+        } else {
+            alert("Invalid username or password.");
+        }
+    });
+
+
+    function handleLogout() {
+        if (currentUser) {
+            alert(`Goodbye, ${currentUser.fullName}!`);
+            currentUser = null;
+            updateAuthButton();
+        }
+    }
+
+
+    function showLoginModal() {
+        const loginModal = new bootstrap.Modal(document.getElementById("#exampleModalLogin"));
+        loginModal.show();
+    }
+
+
+    function updateAuthButton() {
+        authButton.textContent = currentUser ? "Logout" : "Login";
+
+    }
+
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const loginForm = document.getElementById('signupForm');
-  const loginButton = document.getElementById('createAccountBtn');
-  const fullNameInput = document.getElementById('fullName');
-  const passwordInput = document.getElementById('password');
 
-  // Enable the login button when both fields have values
-  function toggleLoginButton() {
-    loginButton.disabled = !(fullNameInput.value && passwordInput.value);
-  }
+const userIcon = document.getElementById('userIcon');
+const dropdown = document.getElementById('dropdown');
 
-  // Attach event listeners to check input values
-  fullNameInput.addEventListener('input', toggleLoginButton);
-  passwordInput.addEventListener('input', toggleLoginButton);
 
-  // Handle form submission
-  loginForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
+let buttonClickCount = 0;
 
-    // Capture form data
-    const fullName = fullNameInput.value;
-    const password = passwordInput.value;
+function demo() {
+    buttonClickCount++;
 
-    // Example: Log form data to console (Replace with your own logic for handling login)
-    console.log('User Name:', fullName);
-    console.log('Password:', password);
+    if (buttonClickCount % 2 === 1) {
+        document.body.style.background = "#333333";
 
-    // Clear form fields after submission
-    loginForm.reset();
-    loginButton.disabled = true; // Disable the button again
-    window.location.href = "index.html";
-  });
-});
+    } else {
+        document.body.style.background = "white";
+
+    }
+}
+
