@@ -11,19 +11,33 @@ It replicates the basic front-end design and functionality of Zomato — includi
 > Sample previews from the project UI:
 
 ![Home Page](image/1.png)  
+
 ![Restaurant Listings](image/2.png)  
+
 ![Search Functionality](image/3.png)  
+
 ![Categories](image/4.png)  
+
 ![Responsive Design](image/5.png)  
+
 ![Mobile View](image/6.png)  
+
 ![Restaurant Cards](image/7.png)  
+
 ![Filters & Menus](image/8.png)  
+
 ![More Sections](image/9.png)  
+
 ![User Interface](image/10.png)  
+
 ![Dark Mode (optional)](image/11.png)  
+
 ![Footer Section](image/12.png)  
+
 ![Location Select](image/13.png)  
+
 ![Dining Out](image/14.png)  
+
 ![Final Layout](image/15.png)
 
 ---
