@@ -1,5 +1,5 @@
 
-# 🍔🍽️ Zomato Clone Website
+# 🍔🍽️ Zomato Clone Website - Suresh Jaiswar
 
 This is a **Zomato Clone Website** project created using **HTML**, **CSS**, and **JavaScript**.  
 It replicates the basic front-end design and functionality of Zomato — including the homepage layout, restaurant listings, search functionality, and a fully responsive user interface.
